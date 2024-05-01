@@ -1,7 +1,7 @@
 import { Link, type LinkProps, Image, type ImageProps } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { Link as ReactLink } from 'react-router-dom';
-import logo from '@/assets/logo.svg';
+import logo from '@/assets/logo.png';
 // import logo from "@/assets/logo.png";
 
 type LogoProps = ImageProps & {
