@@ -1,11 +1,11 @@
-import { Suspense } from 'react';
-import './App.css';
+import { AppProvider } from './providers/AppProvider';
+import AppRouter from './routes';
 
 function App() {
   return (
-    <div id="my-canvas">
-      <Suspense fallback={null}></Suspense>
-    </div>
+    <AppProvider>
+      <AppRouter />
+    </AppProvider>
   );
 }
 
