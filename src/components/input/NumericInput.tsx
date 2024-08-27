@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
   FormControl,
   FormControlProps,
@@ -7,16 +8,18 @@ import {
   InputProps,
   Text,
 } from '@chakra-ui/react';
+import { NumericFormat } from 'react-number-format';
 
-type CustomInputProps = {
+type NumericInputProps = {
   formControlProps?: FormControlProps;
   formLabelProps?: FormLabelProps;
   inputProps?: InputProps;
   errorMessage?: string | undefined;
   warningMessage?: string | undefined;
   touched?: boolean | undefined;
+  onValueChange: any;
 };
-export default function CustomInput(props: CustomInputProps) {
+export default function NumericInput(props: NumericInputProps) {
   return (
     <FormControl {...props.formControlProps}>
       <FormLabel
@@ -29,7 +32,14 @@ export default function CustomInput(props: CustomInputProps) {
       >
         {props.formControlProps?.label}
       </FormLabel>
-      <Input
+
+      <NumericFormat
+        thousandSeparator=","
+        prefix=""
+        onValueChange={props.onValueChange}
+        // @ts-ignore
+        value={props.inputProps?.value as number}
+        customInput={Input}
         fontSize={'.875rem'}
         _placeholder={{ color: '#696F8C', fontSize: '.875rem' }}
         errorBorderColor="crimson"

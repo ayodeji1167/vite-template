@@ -3,20 +3,20 @@ import {
   FormControlProps,
   FormLabel,
   FormLabelProps,
-  Input,
-  InputProps,
+  Textarea,
   Text,
+  TextareaProps,
 } from '@chakra-ui/react';
-
-type CustomInputProps = {
+import React from 'react';
+type StringInputProps = {
   formControlProps?: FormControlProps;
   formLabelProps?: FormLabelProps;
-  inputProps?: InputProps;
+  inputProps?: TextareaProps;
   errorMessage?: string | undefined;
   warningMessage?: string | undefined;
   touched?: boolean | undefined;
 };
-export default function CustomInput(props: CustomInputProps) {
+export default function CustomTextArea(props: StringInputProps) {
   return (
     <FormControl {...props.formControlProps}>
       <FormLabel
@@ -29,7 +29,7 @@ export default function CustomInput(props: CustomInputProps) {
       >
         {props.formControlProps?.label}
       </FormLabel>
-      <Input
+      <Textarea
         fontSize={'.875rem'}
         _placeholder={{ color: '#696F8C', fontSize: '.875rem' }}
         errorBorderColor="crimson"
