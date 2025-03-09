@@ -15,8 +15,8 @@ const queryConfig: DefaultOptions = {
       else if (failureCount < 2) return true;
       else return false;
     },
-    staleTime: 300000, // 5 minutes - Adjust for your application's needs.
-    cacheTime: 3600000, // 1 hour - Adjust for your application's needs.
+    staleTime: 300000,
+    cacheTime: 3600000,
   },
 };
 
