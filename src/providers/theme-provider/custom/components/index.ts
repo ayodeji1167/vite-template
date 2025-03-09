@@ -1,4 +1,5 @@
 import { Button } from './Button';
+import { checkboxTheme } from './Checkbox';
 import { Text } from './Text';
 
 export const components = {
@@ -8,5 +9,9 @@ export const components = {
 
   Text: {
     ...Text,
+  },
+
+  Checkbox: {
+    ...checkboxTheme,
   },
 };
